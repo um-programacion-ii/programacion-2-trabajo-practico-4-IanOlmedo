@@ -3,6 +3,7 @@ import modelo.*;
 import java.util.List;
 
 public interface LibroService {
+    Libro buscarPorId(Long id);
     Libro buscarPorIsbn(String isbn);
     List<Libro> obtenerTodos();
     Libro guardar(Libro libro);
