@@ -3,6 +3,8 @@ import estados.EstadoLibro;
 import exceptions.LibroNoEncontradoException;
 import exceptions.PrestamoNoEncontradoExcepcion;
 import modelo.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import repository.LibroRepository;
 import repository.PrestamoRepository;
 import services.interfaces.PrestamoService;
@@ -10,12 +12,13 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-
+@Service
 public class PrestamoServiceImpl implements PrestamoService {
 
     private final PrestamoRepository prestamoRepository;
     private final LibroRepository libroRepository;
 
+    @Autowired
     public PrestamoServiceImpl(PrestamoRepository prestamoRepository, LibroRepository libroRepository) {
         this.prestamoRepository = prestamoRepository;
         this.libroRepository = libroRepository;
@@ -61,13 +64,20 @@ public class PrestamoServiceImpl implements PrestamoService {
 
     @Override
     public void marcarComoDevuelto(Long id) {
-        Prestamo prestamo = obtenerPrestamoPorId(id);
-        prestamo.setFechaDevolucion(Optional.of(LocalDate.now()));
-
-        Libro libro = prestamo.getLibroPrestado();
-        libro.setEstadoLibro(EstadoLibro.DISPONIBLE);
-        libroRepository.save(libro); // Actualizar el estado del libro
-        prestamoRepository.save(prestamo);
+        Optional<Prestamo> prestamoOptional = prestamoRepository.findById(id);
+        if (prestamoOptional.isPresent()) {
+            Prestamo prestamo = prestamoOptional.get();
+            Libro libro = prestamo.getLibroPrestado();
+            if (libro != null) {
+                libro.setEstadoLibro(EstadoLibro.DISPONIBLE);
+                prestamo.setFechaDevolucion(Optional.of(LocalDate.now()));
+                prestamoRepository.save(prestamo);
+            } else {
+                System.err.println("Error: El libro asociado al préstamo con ID " + id + " es null.");
+            }
+        } else {
+            throw new PrestamoNoEncontradoExcepcion("No se encontró el préstamo con ID: " + id);
+        }
     }
 
     @Override
