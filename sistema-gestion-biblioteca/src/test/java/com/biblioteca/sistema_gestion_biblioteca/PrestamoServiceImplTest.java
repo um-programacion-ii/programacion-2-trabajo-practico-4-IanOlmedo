@@ -174,5 +174,6 @@ class PrestamoServiceImplTest {
         assertThrows(PrestamoNoEncontradoExcepcion.class, () -> prestamoService.marcarComoDevuelto(idADevolver));
         verify(prestamoRepository).findById(idADevolver);
         verify(prestamoRepository, never()).save(any(Prestamo.class));
+        
     }
 }
