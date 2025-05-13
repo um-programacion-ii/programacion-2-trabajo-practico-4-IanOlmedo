@@ -3,3 +3,6 @@ USO DE IA
 Se uso inteligencia artificial para:
 
 - Aplicar el uso de Optional<LocalDate> en fechaDevolucion (Prestamo)
+- Ver el funcionamiento de los End Points
+- Aprender a definir endPoint
+- Agilizar los tests de cada clase (generalizando)
