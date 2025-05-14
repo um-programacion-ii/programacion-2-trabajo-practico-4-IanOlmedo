@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/Vg2EF-QZ)
 # 🚀 Trabajo Práctico: Sistema de Gestión de Biblioteca con Spring Framework
 
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.4.5-green)
@@ -5,6 +6,35 @@
 ![Maven](https://img.shields.io/badge/Maven-3.9.0-red)
 ![JUnit5](https://img.shields.io/badge/JUnit-5.10.1-green)
 ![Mockito](https://img.shields.io/badge/Mockito-5.8.0-blue)
+
+## PUESTA EN MARCHA
+
+1. **Clonar el repositorio**
+
+   ```bash
+   git clone git@github.com:um-programacion-ii/programacion-2-trabajo-practico-2-IanOlmedo.git
+   ```
+
+2. **Descargar el compilador de Java (javac)**
+
+   ```bash
+   sudo apt install default-jdk
+   ```
+
+3. **Compilar el proyecto**
+
+   ```bash
+   find src -name "*.java" > sources.txt
+   javac -d out @sources.txt
+   ```
+
+4. **Ejecutar la aplicación**
+
+   ```bash
+   java -cp out java.com.biblioteca.sistema_gestion_biblioteca.SistemaGestionBibliotecaApplication
+   ```
+
+   O desde tu IDE, ejecutar la clase **com.biblioteca.sistema_gestion_biblioteca.SistemaGestionBibliotecaApplication**.
 
 ## ⚠️ Importante: Antes de Comenzar
 
@@ -118,8 +148,9 @@ Desarrollar un sistema de gestión de biblioteca utilizando Spring Framework, im
 > 💡 **Nota**: Esta estimación considera la experiencia adquirida en trabajos anteriores y la complejidad de implementar una arquitectura en capas con Spring Framework. El tiempo se ha ajustado considerando que no se requiere implementación de persistencia real.
 
 ## 👨‍🎓 Información del Alumno
-- **Nombre y Apellido**: [Nombre y Apellido del Alumno]
-- **Legajo**: [Número de Legajo]
+- **Nombre y Apellido**: Ian Olmedo
+- **Legajo**: 62199
+- **DNI**: 45716948
 
 ## 📋 Requisitos Previos
 

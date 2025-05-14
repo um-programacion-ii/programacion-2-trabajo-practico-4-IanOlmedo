@@ -1,0 +1,10 @@
+USO DE IA
+
+Se uso inteligencia artificial para:
+
+- Aplicar el uso de Optional<LocalDate> en fechaDevolucion (Prestamo)
+- Entender como se conecta Repository con Services
+- Ver el funcionamiento de los End Points
+- Aprender a definir endPoint
+- Agilizar los tests de cada clase (generalizando)
+- Ver como es el uso de MockBean
