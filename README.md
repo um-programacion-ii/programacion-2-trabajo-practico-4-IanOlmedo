@@ -7,6 +7,35 @@
 ![JUnit5](https://img.shields.io/badge/JUnit-5.10.1-green)
 ![Mockito](https://img.shields.io/badge/Mockito-5.8.0-blue)
 
+## PUESTA EN MARCHA
+
+1. **Clonar el repositorio**
+
+   ```bash
+   git clone git@github.com:um-programacion-ii/programacion-2-trabajo-practico-2-IanOlmedo.git
+   ```
+
+2. **Descargar el compilador de Java (javac)**
+
+   ```bash
+   sudo apt install default-jdk
+   ```
+
+3. **Compilar el proyecto**
+
+   ```bash
+   find src -name "*.java" > sources.txt
+   javac -d out @sources.txt
+   ```
+
+4. **Ejecutar la aplicación**
+
+   ```bash
+   java -cp out java.com.biblioteca.sistema_gestion_biblioteca.SistemaGestionBibliotecaApplication
+   ```
+
+   O desde tu IDE, ejecutar la clase **com.biblioteca.sistema_gestion_biblioteca.SistemaGestionBibliotecaApplication**.
+
 ## ⚠️ Importante: Antes de Comenzar
 
 1. **Lectura Completa**
